@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: cornflowerblue;
+  padding-top: 50px;
+}
+
+main {
+  width: 100%;
+}
+section {
+  background-color: white;
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px solid darkgray;
+  background-color: lightgray;
+  color: white;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected {
+  background-color: aqua;
+}
+
+.hard {
+  width: calc(100% / 10);
+}
+
+.regular {
+  width: calc(100% / 9);
+}
+
+.easy {
+  width: calc(100% / 7);
+}
