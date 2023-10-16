@@ -26,16 +26,31 @@ function play() {
     // i valori non si possono ripetere
     if (!bombe.includes(randomNumber)) {
       bombe.push(randomNumber);
+      console.log(bombe);
     }
   }
   //   per ogni cella assegno un event listener
+  let score = 0;
   for (let i = 0; i < cellDOMElement.length; i++) {
     let n = i + 1;
     let currentCellDOMElement = cellDOMElement[i];
 
     currentCellDOMElement.addEventListener('click', function () {
       console.log(`Questa è la casella ${n}`);
-      currentCellDOMElement.classList.add('selected');
+
+      if (bombe.includes(n)) {
+        currentCellDOMElement.classList.add('bomb');
+        setTimeout(function () {
+          alert(`QBOOOM, hai perso! Il tuo punteggio è: ${score}`);
+        }, 1);
+      } else {
+        currentCellDOMElement.classList.add('selected');
+        score++;
+      }
+      // VINCITA
+      if (score === 100 - bombe.length) {
+        alert(`Hai vinto! Il tuo punteggio è: ${score}`);
+      }
     });
   }
 }
