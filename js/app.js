@@ -10,12 +10,24 @@ function play() {
   //   Popolo Grid con 100 div contententi la cella
   for (let i = 0; i < 100; i++) {
     const n = i + 1;
-    const cellHtml = `<div class="cell hard">${n}</div>`;
+    const cellHtml = `<div class="cell easy">${n}</div>`;
     gridDOMElement.innerHTML += cellHtml;
   }
   //   creo un array contenente tutte le celle
   let cellDOMElement = document.querySelectorAll('.cell');
 
+  // CREAZIONE DELLE BOMBE
+  // creare un array con 16 numeri random tutti diversi tra di loro.
+  // inizializzo l'array
+  let bombe = [];
+  // aggiungo i valori rando all'array fino a raggiungere il numero di 16
+  while (bombe.length < 16) {
+    let randomNumber = Math.floor(Math.random() * 100 + 1);
+    // i valori non si possono ripetere
+    if (!bombe.includes(randomNumber)) {
+      bombe.push(randomNumber);
+    }
+  }
   //   per ogni cella assegno un event listener
   for (let i = 0; i < cellDOMElement.length; i++) {
     let n = i + 1;

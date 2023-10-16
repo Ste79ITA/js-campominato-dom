@@ -14,13 +14,13 @@ function play() {
   let difficulty = '';
 
   if (difficultySelectorDOMElement.value == 1) {
-    grid = 49;
+    grid = 100;
     difficulty = 'easy';
   } else if (difficultySelectorDOMElement.value == 2) {
     grid = 81;
     difficulty = 'regular';
   } else if (difficultySelectorDOMElement.value == 3) {
-    grid = 100;
+    grid = 49;
     difficulty = 'hard';
   } else {
     alert('Scegli un livello di difficoltà');
